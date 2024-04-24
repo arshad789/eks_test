@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 module "s3_bucket" {
-  source = "./modules/s3"  # Path to your S3 module directory
+  source = "${workspace}/modules/s3"  # Path to your S3 module directory
   bucket_name = "project-bucket-for-statefile"  # Specify your desired bucket name
 }
 module "dynamodb_table" {
-  source = "./modules/dynomodb"  # Path to your DynamoDB module directory
+  source = "${workspace}/modules/dynomodb"  # Path to your DynamoDB module directory
   table_name = "project-lock-table"   # Specify your desired table name
 }
 
