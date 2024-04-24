@@ -2,15 +2,7 @@ provider "aws" {
     region = "us-east-1"  # Set your desired AWS region
 }
 
-resource "aws_dynamodb_table" "state_lock_table" {
-  name           = var.table_name
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "LockID"
-  attribute {
-    name = "LockID"
-    type = "S"
-  }
-}
+
 #Vpc
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
